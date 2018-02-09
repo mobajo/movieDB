@@ -11,10 +11,20 @@
     <div class="col-xs-12 col-sm-4 col-sm-offset-2">
       <h3>Cast & Crew</h3>
       <p>
-        <strong>Release:</strong>  <%= @movie.year %>
+        <strong>Release:</strong>  
+        <% if @movie.year == "" %>
+          <%= @api_data["Year"] %>
+        <% else %>
+          <%= @movie.year %>
+        <% end %>
       </p>
       <p>
-        <strong>Directed by:</strong>  <%= @movie.director %>
+        <strong>Directed by:</strong>  
+          <% if @movie.director == "" %>
+          <%= @api_data["Director"] %>
+          <% else %>
+          <%= @movie.director %>
+        <% end %>
       </p>
       <% unless @api_data["Error"] %>
       <p>
@@ -37,7 +47,7 @@
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
-      <% unless @api_data["Error"] %>
+      <% unless @api_data["Error"] || @api_data["Poster"] == "N/A"  %>
         <%= image_tag @api_data["Poster"], class: "img-responsive" %>
       <% end %>
       
