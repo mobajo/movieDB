@@ -1,0 +1,19 @@
+<div class="container">
+<div class="row">
+  <div class="col-sm-offset-2 col-xs-5">
+    <ol class="list-inline" id="breadcrumb">
+      <%= render_breadcrumbs :tag => :li, :separator => "<i class='fa fa-long-arrow-alt-right' aria-hidden='true' ></i>" %>
+    </ol>
+    <h2>Add a new movie</h2>
+    <%= simple_form_for @movie, url: movies_create_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :year %>
+    <%= f.input :director %>
+    <%= f.submit "Add movie", class: "btn btn-danger btn-lg" %>
+    <% end %>
+    
+
+  </div>
+</div>
+  
+</div>

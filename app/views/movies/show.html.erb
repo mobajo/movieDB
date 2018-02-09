@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-offset-2 col-xs-4">
+        <ol class="list-inline" id="breadcrumb">
+          <%= render_breadcrumbs :tag => :li, :separator => "<i class='fa fa-long-arrow-alt-right' aria-hidden='true' ></i>" %>
+        </ol>
+    </div>
+  </div>
+  <h1 class="col-sm-offset-2 tex"><%= @movie.title %></h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+      <h3>Cast & Crew</h3>
+      <p>
+        <strong>Release:</strong>  <%= @movie.year %>
+      </p>
+      <p>
+        <strong>Directed by:</strong>  <%= @movie.director %>
+      </p>
+      <% unless @api_data["Error"] %>
+      <p>
+        <strong>Writer(s):</strong>  <%= @api_data["Writer"] %>
+      </p>
+      <p>
+        <strong>Actors:</strong>  <%= @api_data["Actors"] %>
+      </p>
+      <h3>Plot</h3>
+      <p>
+        <%= @api_data["Plot"] %>
+      </p>
+      <h3>Ratings & Awards</h3>
+      <p>
+        <strong>Rating on IMdb:</strong>  <%= @api_data["imdbRating"] %>
+      </p>
+      <p>
+        <strong>MetaScore:</strong>  <%= @api_data["Metascore"] %>
+      </p>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <% unless @api_data["Error"] %>
+        <%= image_tag @api_data["Poster"], class: "img-responsive" %>
+      <% end %>
+      
+      <p>
+        <%= link_to "Delete", movies_destroy_path(@movie), class: "btn btn-danger btn-lg", style: "margin-top: 20px; background: #D1564E" %>
+      </p>
+    </div>
+  </div>
+</div>
