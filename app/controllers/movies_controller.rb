@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movies = Movie.all
     @movie = Movie.find(params[:id])
     @get_api = HTTParty.get('http://www.omdbapi.com/?t=' + @movie.title + '&apikey=' + ENV['MOVIE_DB_API'])
     @api_data = @get_api.parsed_response

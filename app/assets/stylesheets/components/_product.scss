@@ -9,6 +9,19 @@
   }
 }
 
+.movies-fwbw {
+  padding: 20px 30px 20px 15px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  a {
+    color: white; 
+  }
+  a:hover {
+    text-decoration: none;
+    color: #D1564E;
+  }
+}
+
 /* Body design */
 .product-body {
   flex: 1 1 auto;
@@ -89,6 +102,7 @@
     text-decoration: none;
   }
 }
+
 .product-upvote:hover, .product-upvote.product-upvote-upvoted {
   color: #5898f1;
   cursor: pointer;
