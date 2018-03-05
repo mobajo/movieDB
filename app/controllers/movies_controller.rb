@@ -7,8 +7,9 @@ class MoviesController < ApplicationController
   def show
     @movies = Movie.all
     @movie = Movie.find(params[:id])
-    @get_api = HTTParty.get('http://www.omdbapi.com/?t=' + @movie.title + '&apikey=' + ENV['MOVIE_DB_API'])
-    @get_api.gsub!(' ', '+')
+    @movie_string = 'http://www.omdbapi.com/?t=' + @movie.title + '&apikey=' + ENV['MOVIE_DB_API']
+    @movie_string.gsub!(' ', '+')
+    @get_api = HTTParty.get(@movie_string)
     @api_data = @get_api.parsed_response
     add_breadcrumb "#{@movie.title}", :movie_path
   end
