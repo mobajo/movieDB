@@ -8,12 +8,9 @@
 
 Movie.destroy_all
 
-puts "Creating four movies for DB"
+puts "Creating some movies for DB"
 puts
 
-m = Movie.new(title: "Titanic", year: "1997", director: "James Cameron")
-m.save
-puts m.title
 m = Movie.new(title: "The Big Lebowski", year: "1998", director: "Ethan Coen, Joel Coen")
 m.save
 puts m.title
@@ -23,9 +20,47 @@ puts m.title
 m = Movie.new(title: "2001: A Space Odyssey", year: "1968", director: "Stanley Kubrick")
 m.save
 puts m.title
+m = Movie.new(title: "Truman Show")
+m.save
+puts m.title
+m = Movie.new(title: "Being John Malkovich")
+m.save
+puts m.title
+m = Movie.new(title: "Clockwork Orange")
+m.save
+puts m.title
+m = Movie.new(title: "Goodfellas")
+m.save
+puts m.title
+m = Movie.new(title: "Catch Me If You Can")
+m.save
+puts m.title
+m = Movie.new(title: "Fargo")
+m.save
+puts m.title
+m = Movie.new(title: "Fight Club")
+m.save
+puts m.title
+m = Movie.new(title: "Broken Flowers")
+m.save
+puts m.title
+m = Movie.new(title: "Blade Runner")
+m.save
+puts m.title
+m = Movie.new(title: "Interstellar")
+m.save
+puts m.title
+m = Movie.new(title: "Gravity")
+m.save
+puts m.title
+m = Movie.new(title: "The Square")
+m.save
+puts m.title
+m = Movie.new(title: "Grand Budapest Hotel")
+m.save
+puts m.title
 puts
 
-Movie.all
 
-puts "Four movies created"
+puts "Movies created"
 
